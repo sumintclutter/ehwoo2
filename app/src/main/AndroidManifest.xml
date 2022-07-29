@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hongdroid.registerloginexample">
 
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 인터넷 권한 선언-->
 
     <application
@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">
+
 
         </activity>
     </application>
