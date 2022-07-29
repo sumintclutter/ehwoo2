@@ -20,11 +20,24 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText et_id, et_pass, et_name, et_age;
     private Button btn_register;
+    private Button btn_certify;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { // 액티비티 시작시 처음으로 실행되는 생명주기!
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        btn_certify = findViewById(R.id.btn_certify);
+
+
+        // 회원가입 버튼을 클릭 시 수행
+        btn_certify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // 아이디 값 찾아주기
         et_id = findViewById(R.id.et_id);
@@ -49,8 +62,10 @@ public class RegisterActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
+
                             if (success) { // 회원등록에 성공한 경우
-                                Toast.makeText(getApplicationContext(),"회원 등록에 성공하였습니다.",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"회원 등록에 성공하였습니다.장애인 등록증을 인증해주세요.",Toast.LENGTH_SHORT).show();
+
                             } else { // 회원등록에 실패한 경우
                                 Toast.makeText(getApplicationContext(),"회원 등록에 실패하였습니다.",Toast.LENGTH_SHORT).show();
                                 return;

@@ -9,20 +9,26 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class CameraActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnCamera;
     ImageView imageView;
 
+    Button btn_goLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_camera);
 
         // 디자인 정의
         btnCamera = (Button) findViewById(R.id.btn_Photo);
         imageView = (ImageView) findViewById(R.id.imageView);
         btnCamera.setOnClickListener(this);
+        btn_goLogin=(Button) findViewById(R.id.btn_goLogin);
+        btn_goLogin.setOnClickListener(this);
+
     }
 
     @Override
@@ -34,7 +40,13 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(i, 0);
                 btnCamera.setText("인증 완료");
+                Toast.makeText(getApplicationContext(),"인증되었습니다. 로그인하기를 눌러주세요",Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.btn_goLogin:
+                Intent intent = new Intent(CameraActivity.this, LoginActivity.class);
+                startActivity(intent);
+                break;
+
         }
     }
 

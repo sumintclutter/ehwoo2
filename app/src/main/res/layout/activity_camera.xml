@@ -8,12 +8,22 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="325dp"
+        android:layout_height="439dp"
         app:srcCompat="@drawable/idetitycard" />
 
     <Button
         android:id="@+id/btn_Photo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="장애인 등록증 촬영하기" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="13dp" />
+
+    <Button
+        android:id="@+id/btn_goLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인하기" />
 </LinearLayout>

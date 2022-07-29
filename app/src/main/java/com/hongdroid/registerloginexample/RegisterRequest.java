@@ -10,7 +10,7 @@ import java.util.Map;
 public class RegisterRequest extends StringRequest {
 
     // 서버 URL 설정 ( PHP 파일 연동 )
-    final static private String URL = "http://닷홈아디.dothome.co.kr/Register.php";
+    final static private String URL = "http://nicky2341.dothome.co.kr/Register.php";
     private Map<String, String> map;
 
 
