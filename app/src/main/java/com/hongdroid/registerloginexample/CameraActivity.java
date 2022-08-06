@@ -6,10 +6,9 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
+
 
 public class CameraActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnCamera;
@@ -39,8 +38,7 @@ public class CameraActivity extends AppCompatActivity implements View.OnClickLis
                 // 카메라 기능을 Intent
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(i, 0);
-                btnCamera.setText("인증 완료");
-                Toast.makeText(getApplicationContext(),"인증되었습니다. 로그인하기를 눌러주세요",Toast.LENGTH_SHORT).show();
+                btnCamera.setText("인증이 완료되었습니다.");
                 break;
             case R.id.btn_goLogin:
                 Intent intent = new Intent(CameraActivity.this, LoginActivity.class);
